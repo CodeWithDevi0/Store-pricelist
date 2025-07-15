@@ -4,7 +4,14 @@ let productsData = [];
 // Function to fetch products data
 async function fetchProducts() {
     try {
-        const response = await fetch('includes/products-array.php');
+        // Try the new API endpoint first, fallback to old path
+        let response;
+        try {
+            response = await fetch('/api/products');
+        } catch (error) {
+            // Fallback to original path
+            response = await fetch('includes/products-array.php');
+        }
         
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
