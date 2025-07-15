@@ -4,13 +4,18 @@ let productsData = [];
 // Function to fetch products data
 async function fetchProducts() {
     try {
-        // Try the new API endpoint first, fallback to old path
+        // Try the Node.js API endpoint first (most reliable on Vercel)
         let response;
         try {
             response = await fetch('/api/products');
         } catch (error) {
-            // Fallback to original path
-            response = await fetch('includes/products-array.php');
+            // Fallback to old paths if needed
+            console.log('Trying fallback endpoints...');
+            try {
+                response = await fetch('includes/products-array.php');
+            } catch (fallbackError) {
+                response = await fetch('/api/products.php');
+            }
         }
         
         if (!response.ok) {
