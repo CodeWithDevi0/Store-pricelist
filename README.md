@@ -1,13 +1,13 @@
-# Store Pricelist - Static + Serverless
+# Store Pricelist - Static + Node.js Serverless
 
-A modern web application with static frontend and serverless PHP backend for product listings with live search.
+A modern web application with static frontend and Node.js serverless backend for product listings with live search.
 
 ## 🚀 How to Deploy to Vercel
 
 ### Step 1: Prepare Your Code
 Make sure you have these files in your project:
 - ✅ `index.html` (Main page - static)
-- ✅ `api/products.php` (API endpoint - serverless)
+- ✅ `api/products.js` (API endpoint - Node.js serverless)
 - ✅ `js/fetch-array.js` (JavaScript functionality)
 - ✅ `vercel.json` (Vercel configuration)
 
@@ -18,15 +18,14 @@ Make sure you have these files in your project:
 2. Sign up/login with GitHub
 3. Click "New Project"
 4. Import your repository
-5. Vercel will automatically detect it as a static site with serverless functions
+5. Vercel will automatically detect it as a static site with Node.js serverless functions
 6. Click "Deploy"
 
 #### Option B: Using Vercel CLI
 1. Install Vercel CLI: `npm i -g vercel`
 2. In your project folder: `vercel`
 3. Follow the prompts
-4. Choose "Other" if asked about framework
-5. Deploy!
+4. Deploy!
 
 ### Step 3: Test Your Deployment
 - Main page: `https://your-app.vercel.app/`
@@ -38,8 +37,9 @@ Make sure you have these files in your project:
 Store-pricelist/
 ├── index.html             # Main application page (static)
 ├── vercel.json           # Vercel configuration
+├── .vercelignore         # Files to ignore during deployment
 ├── api/
-│   └── products.php      # API endpoint (serverless function)
+│   └── products.js       # API endpoint (Node.js serverless function)
 ├── js/
 │   └── fetch-array.js    # Search and display logic
 └── includes/             # Legacy files (kept for reference)
@@ -56,20 +56,38 @@ Store-pricelist/
 - Real-time search functionality
 - Responsive design
 
-### Backend (Serverless)
-- PHP serverless function in `/api/products.php`
+### Backend (Node.js Serverless)
+- Node.js serverless function in `/api/products.js`
 - Returns JSON data
 - CORS enabled for cross-origin requests
 - No server maintenance required
+- Guaranteed compatibility with Vercel
 
 ## 🛠️ Adding New Products
-Edit `api/products.php` and add new products to the array:
-```php
-array(
-    'product_name' => 'New Product',
-    'product_price' => 15
-)
+Edit `api/products.js` and add new products to the array:
+```javascript
+{
+  product_name: 'New Product',
+  product_price: 15
+}
 ```
+
+## 🔄 What Changed to Fix Vercel Deployment
+
+### Problem
+Vercel was detecting the wrong runtime (Node.js instead of PHP) causing deployment failures.
+
+### Solution
+- ✅ **Converted API from PHP to Node.js** - More reliable on Vercel
+- ✅ **Simplified configuration** - Removed complex PHP runtime setup
+- ✅ **Added fallback logic** - JavaScript tries multiple endpoints
+- ✅ **Better error handling** - Clear error messages for users
+
+### Benefits of Node.js Approach
+- 🚀 **Instant deployment** - No runtime detection issues
+- ⚡ **Faster cold starts** - Node.js starts quicker than PHP
+- 🔄 **Better compatibility** - Native Vercel support
+- 🛡️ **More reliable** - Standard Vercel serverless approach
 
 ## 🌟 Benefits of This Architecture
 - ⚡ **Fast**: Static files served from CDN
@@ -77,5 +95,6 @@ array(
 - 🔄 **Scalable**: Automatically scales with traffic
 - 🛡️ **Secure**: No server to maintain or secure
 - 🌍 **Global**: Available worldwide instantly
+- ✅ **Vercel Optimized**: Uses Vercel's preferred technologies
 
-Your app is now optimized for Vercel's platform! 🚀 
+Your app is now fully optimized for Vercel's platform! 🚀 
