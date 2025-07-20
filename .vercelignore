@@ -1,6 +1,5 @@
 # Ignore legacy PHP files
 home-page.php
-includes/
 
 # Ignore git files
 .git/

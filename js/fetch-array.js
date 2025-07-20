@@ -9,13 +9,8 @@ async function fetchProducts() {
         try {
             response = await fetch('/api/products');
         } catch (error) {
-            // Fallback to old paths if needed
-            console.log('Trying fallback endpoints...');
-            try {
-                response = await fetch('includes/products-array.php');
-            } catch (fallbackError) {
-                response = await fetch('/api/products.php');
-            }
+            console.error('Failed to fetch products:', error);
+            throw error;
         }
         
         if (!response.ok) {
