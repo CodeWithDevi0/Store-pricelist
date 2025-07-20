@@ -21,7 +21,7 @@ I created this web application because we have a family store and my parents alw
 ## Technologies I Used
 
 This project help me learn these things:
-- HTML, CSS, JavaScript for the website
+- HTML and JavaScript for the website
 - Bootstrap 5 for making it look good
 - Vercel to put it on internet
 - How to make websites work on phones
