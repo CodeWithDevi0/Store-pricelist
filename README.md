@@ -1,100 +1,83 @@
-# Store Pricelist - Static + Node.js Serverless
+# Family Mini Store Pricelist Web App
 
-A modern web application with static frontend and Node.js serverless backend for product listings with live search.
+This is a simple web application I made for my family mini store. My parents can use this to check product prices easily. I also made this project to practice my programming skills.
 
-## 🚀 How to Deploy to Vercel
+## About Our Store App
 
-### Step 1: Prepare Your Code
-Make sure you have these files in your project:
-- ✅ `index.html` (Main page - static)
-- ✅ `api/products.js` (API endpoint - Node.js serverless)
-- ✅ `js/fetch-array.js` (JavaScript functionality)
-- ✅ `vercel.json` (Vercel configuration)
+I created this web application because we have a family store and my parents always need to check prices. Before this, they have to look through papers and notebooks to find prices. This was taking too much time. Now they can just type the product name and see the price immediately.
 
-### Step 2: Deploy to Vercel
+### What This App Can Do
+- Search products by typing name
+- Show prices right away when you search
+- Works on phone and computer
+- Simple design that is easy to use
+- Loads fast so you don't wait
 
-#### Option A: Using Vercel Website (Recommended)
-1. Go to [vercel.com](https://vercel.com)
-2. Sign up/login with GitHub
-3. Click "New Project"
-4. Import your repository
-5. Vercel will automatically detect it as a static site with Node.js serverless functions
-6. Click "Deploy"
+### Who Uses This App
+- My parents use it in our store to check prices
+- Customers can also use it to see prices
+- I made it to learn more about programming
 
-#### Option B: Using Vercel CLI
-1. Install Vercel CLI: `npm i -g vercel`
-2. In your project folder: `vercel`
-3. Follow the prompts
-4. Deploy!
+## Technologies I Used
 
-### Step 3: Test Your Deployment
-- Main page: `https://your-app.vercel.app/`
-- API endpoint: `https://your-app.vercel.app/api/products`
-- Search functionality should work perfectly
+This project help me learn these things:
+- HTML, CSS, JavaScript for the website
+- Bootstrap 5 for making it look good
+- Node.js for the server part
+- Vercel to put it on internet
+- How to make websites work on phones
+- How to make search function
 
-## 📁 Project Structure
+## How It Works
+
+1. You type product name in search box
+2. App shows you matching products and prices
+3. You can see all information clearly
+4. Prices are always current
+
+## Live Website
+
+You can use this app here: [Your Vercel URL]
+
+## What I Learned
+
+Making this project teach me:
+- How to build websites that solve real problems
+- How to make websites easy for people to use
+- How to make search work properly
+- How to put websites on internet
+- How to make websites work on different devices
+- How to write code for servers
+
+## Files in Project
 ```
 Store-pricelist/
-├── index.html             # Main application page (static)
-├── vercel.json           # Vercel configuration
-├── .vercelignore         # Files to ignore during deployment
+├── index.html             # Main page of website
 ├── api/
-│   └── products.js       # API endpoint (Node.js serverless function)
+│   └── products.js       # Where product data comes from
 ├── js/
-│   └── fetch-array.js    # Search and display logic
-└── includes/             # Legacy files (kept for reference)
-    ├── products-array.php
-    ├── top-content.php
-    └── home-page.php
+│   ├── fetch-array.js    # Code for search function
+│   └── current-time.js   # Shows current time
+└── includes/             # Old PHP files I used before
 ```
 
-## 🔧 Technical Details
+## How to Add New Products
 
-### Frontend (Static)
-- Pure HTML/CSS/JavaScript
-- Bootstrap 5 for styling
-- Real-time search functionality
-- Responsive design
+If you want to add new product, you need to edit the file `api/products.js` and add like this:
 
-### Backend (Node.js Serverless)
-- Node.js serverless function in `/api/products.js`
-- Returns JSON data
-- CORS enabled for cross-origin requests
-- No server maintenance required
-- Guaranteed compatibility with Vercel
-
-## 🛠️ Adding New Products
-Edit `api/products.js` and add new products to the array:
 ```javascript
 {
-  product_name: 'New Product',
-  product_price: 15
+  product_name: 'New Product Name',
+  product_price: 25.00
 }
 ```
 
-## 🔄 What Changed to Fix Vercel Deployment
+## Why I Made This
 
-### Problem
-Vercel was detecting the wrong runtime (Node.js instead of PHP) causing deployment failures.
+I made this because I want to help my parents with their store work. Also I want to practice programming and learn new things. It makes me happy that I can make something useful for my family and also improve my coding skills at same time.
 
-### Solution
-- ✅ **Converted API from PHP to Node.js** - More reliable on Vercel
-- ✅ **Simplified configuration** - Removed complex PHP runtime setup
-- ✅ **Added fallback logic** - JavaScript tries multiple endpoints
-- ✅ **Better error handling** - Clear error messages for users
+This project is special for me because it helps my family and helps me learn programming together.
 
-### Benefits of Node.js Approach
-- 🚀 **Instant deployment** - No runtime detection issues
-- ⚡ **Faster cold starts** - Node.js starts quicker than PHP
-- 🔄 **Better compatibility** - Native Vercel support
-- 🛡️ **More reliable** - Standard Vercel serverless approach
+---
 
-## 🌟 Benefits of This Architecture
-- ⚡ **Fast**: Static files served from CDN
-- 💰 **Cost-effective**: Only pay for API calls
-- 🔄 **Scalable**: Automatically scales with traffic
-- 🛡️ **Secure**: No server to maintain or secure
-- 🌍 **Global**: Available worldwide instantly
-- ✅ **Vercel Optimized**: Uses Vercel's preferred technologies
-
-Your app is now fully optimized for Vercel's platform! 🚀 
+Made with love for our family store and for learning 
