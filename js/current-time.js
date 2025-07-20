@@ -1,19 +1,12 @@
-function getCurrentTime() {
+function getCurrentDate() {
     const now = new Date();
-    let hours = now.getHours();
-    let minutes = now.getMinutes();
-    let ampm = hours >= 12 ? 'PM' : 'AM';
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const month = months[now.getMonth()];
+    const day = now.getDate();
+    const year = now.getFullYear();
 
-    // Convert to 12-hour format
-    hours = hours % 12;
-    hours = hours ? hours : 12; // Handle midnight (0 hours)
-
-    // Add leading zeros if needed
-    minutes = minutes < 10 ? '0' + minutes : minutes;
-    hours = hours < 10 ? '0' + hours : hours;
-
-    return `${hours}:${minutes} ${ampm}`;
+    return `${month} ${day}, ${year}`;
 }
 
-// Update the time display
-document.getElementById('current-time').textContent = getCurrentTime();
+// Update the date display
+document.getElementById('current-time').textContent = getCurrentDate();
