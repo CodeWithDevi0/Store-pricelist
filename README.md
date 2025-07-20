@@ -23,7 +23,6 @@ I created this web application because we have a family store and my parents alw
 This project help me learn these things:
 - HTML, CSS, JavaScript for the website
 - Bootstrap 5 for making it look good
-- Node.js for the server part
 - Vercel to put it on internet
 - How to make websites work on phones
 - How to make search function
@@ -37,7 +36,7 @@ This project help me learn these things:
 
 ## Live Website
 
-You can use this app here: [Your Vercel URL]
+You can use this app here: https://store-pricelist.vercel.app/
 
 ## What I Learned
 
@@ -48,18 +47,6 @@ Making this project teach me:
 - How to put websites on internet
 - How to make websites work on different devices
 - How to write code for servers
-
-## Files in Project
-```
-Store-pricelist/
-├── index.html             # Main page of website
-├── api/
-│   └── products.js       # Where product data comes from
-├── js/
-│   ├── fetch-array.js    # Code for search function
-│   └── current-time.js   # Shows current time
-└── includes/             # Old PHP files I used before
-```
 
 ## How to Add New Products
 
