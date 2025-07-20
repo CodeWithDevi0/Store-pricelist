@@ -8,5 +8,10 @@ function getCurrentDate() {
     return `${month} ${day}, ${year}`;
 }
 
-// Update the date display
-document.getElementById('current-date').textContent = getCurrentDate();
+// Wait for DOM to be ready before updating the date
+document.addEventListener('DOMContentLoaded', function() {
+    const dateElement = document.getElementById('current-date');
+    if (dateElement) {
+        dateElement.textContent = getCurrentDate();
+    }
+});
