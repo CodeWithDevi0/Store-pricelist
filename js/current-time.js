@@ -9,4 +9,4 @@ function getCurrentDate() {
 }
 
 // Update the date display
-document.getElementById('current-time').textContent = getCurrentDate();
+document.getElementById('current-date').textContent = getCurrentDate();
